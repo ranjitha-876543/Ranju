@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ranjitha BG · BCA Computer Science Student</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#14163A;--violet:#6D4AFF;--teal:#0FB5AE;--coral:#FF6B5B;--gold:#FFC24B;
+  --bg:#F4F2FF;--card:#FFFFFF;--ink:#14163A;--body:#3B3F66;--line:#DAD5F5;--tint:#E9E5FF;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1030;--card:#1A1D48;--ink:#F3F1FF;--body:#C4C7EA;--line:#33376A;--tint:#23275A}}
+:root[data-theme="dark"]{--bg:#0E1030;--card:#1A1D48;--ink:#F3F1FF;--body:#C4C7EA;--line:#33376A;--tint:#23275A}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--body);font:17px/1.65 'DM Sans',system-ui,sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque','DM Sans',sans-serif;color:var(--ink);margin:0;line-height:1.1;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:0;z-index:10;background:var(--navy);padding-top:env(safe-area-inset-top,0px)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:12px;height:62px}
+.logo{font:800 1.15rem 'Bricolage Grotesque',sans-serif;color:#fff;text-decoration:none;white-space:nowrap}
+.logo b{color:var(--gold)}
+.links{display:flex;gap:2px;overflow-x:auto}
+.links a{color:#CFCBF5;text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:500;font-size:.95rem;white-space:nowrap}
+.links a:hover{background:rgba(255,255,255,.12);color:#fff}
+#theme{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:8px;padding:7px 12px;font:inherit;font-size:.9rem;cursor:pointer}
+.hero{background:var(--navy);color:#CFCBF5;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-90px;top:-90px;width:320px;height:320px;border-radius:50%;background:var(--violet);opacity:.55}
+.hero::before{content:"";position:absolute;left:-60px;bottom:-110px;width:240px;height:240px;border-radius:50%;background:var(--teal);opacity:.35}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:76px;padding-bottom:84px}
+.hello{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;padding:6px 14px;border-radius:999px;font-size:.92rem;margin-bottom:18px}
+.hero h1{color:#fff;font-size:clamp(2.9rem,8vw,5.6rem);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.lead{font-size:1.2rem;color:#DAD7FA;max-width:36ch;margin:20px 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:13px 24px;border-radius:10px;font-weight:700;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--coral);color:#fff}
+.btn.o{border:2px solid #fff;color:#fff}
+.code{background:#0B0C26;color:#E9E7F7;border-radius:14px;box-shadow:8px 8px 0 var(--gold);overflow:hidden;font:.92rem/1.7 ui-monospace,Menlo,Consolas,monospace}
+.code .bar{display:flex;gap:7px;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.12)}
+.code .bar i{width:11px;height:11px;border-radius:50%}
+.code .bar i:nth-child(1){background:var(--coral)}.code .bar i:nth-child(2){background:var(--gold)}.code .bar i:nth-child(3){background:var(--teal)}
+.code pre{margin:0;padding:18px 20px;overflow-x:auto}
+.k{color:#7FE3DE}.s{color:#FFC24B}.v{color:#B8A6FF}
+section{padding:70px 0}
+.alt{background:var(--tint)}
+h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+h2::before{content:"";width:10px;height:34px;border-radius:5px;background:var(--c,var(--violet))}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:40px}
+.about p{margin:0 0 16px;max-width:60ch}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:14px;align-content:start}
+.facts li{background:var(--card);border-radius:12px;padding:16px 18px;border-left:6px solid var(--c);color:var(--ink);font-weight:500}
+.facts li:nth-child(1){--c:var(--violet)}.facts li:nth-child(2){--c:var(--teal)}.facts li:nth-child(3){--c:var(--coral)}
+.facts b{display:block;font-size:.85rem;font-weight:700;color:var(--c)}
+.edu{background:var(--card);border-radius:16px;padding:28px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;border:1px solid var(--line)}
+.badge{width:68px;height:68px;border-radius:16px;background:var(--violet);color:#fff;display:grid;place-items:center;font:800 1.15rem 'Bricolage Grotesque',sans-serif}
+.edu h3{font-size:1.45rem;margin-bottom:4px}
+.edu .t{color:var(--violet);font-weight:700}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.col{background:var(--card);border-radius:16px;padding:24px;border-top:6px solid var(--c)}
+.col:nth-child(1){--c:var(--violet)}.col:nth-child(2){--c:var(--teal)}.col:nth-child(3){--c:var(--coral)}
+.col h3{font-size:1.2rem;margin-bottom:16px}
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:9px}
+.chips li{background:color-mix(in srgb,var(--c) 16%,var(--card));color:var(--ink);padding:7px 14px;border-radius:999px;font-weight:600;font-size:.95rem}
+.card{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line)}
+.card .top{height:92px;background:var(--c);display:flex;align-items:flex-end;padding:14px 20px;color:#fff;font:800 2.2rem 'Bricolage Grotesque',sans-serif}
+.card:nth-child(1){--c:var(--violet)}.card:nth-child(2){--c:var(--teal)}.card:nth-child(3){--c:var(--coral)}
+.card .in{padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:1.25rem}.card p{margin:0}
+.card .tags{margin-top:auto;font-weight:700;font-size:.9rem;color:var(--c)}
+#contact{background:var(--navy);color:#DAD7FA}
+#contact h2{color:#fff;--c:var(--gold)}
+#contact p{max-width:52ch;margin:0 0 26px}
+.clist{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.clist a{border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--navy);font-weight:700;transition:transform .15s}
+.clist a:hover{transform:translateY(-3px)}
+.clist a:nth-child(1){background:var(--gold)}.clist a:nth-child(2){background:var(--teal)}.clist a:nth-child(3){background:var(--coral);color:#fff}
+.clist b{display:block;font-size:.85rem;opacity:.8}
+footer{background:#0B0C26;color:#A9ACD6;padding:22px 0;font-size:.92rem}
+@media (max-width:860px){
+  .hero .wrap,.about,.cols,.clist{grid-template-columns:1fr}
+  .hero .wrap{padding-top:48px;padding-bottom:56px}
+  .logo{display:none}.edu{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav aria-label="Main">
+  <a class="logo" href="#top">Ranjitha<b>.</b>BG</a>
+  <div class="links"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+  <button id="theme" type="button" aria-label="Toggle dark mode">Theme</button>
+</nav></div></header>
+
+<main id="top">
+  <div class="hero"><div class="wrap">
+    <div>
+      <span class="hello">Hello, I'm</span>
+      <h1>Ranjitha <em>BG</em></h1>
+      <p class="lead">BCA Computer Science student in Hassan, Karnataka, building useful things with code.</p>
+      <div class="btns"><a class="btn p" href="#projects">See my projects</a><a class="btn o" href="#contact">Get in touch</a></div>
+    </div>
+    <div class="code" aria-label="Profile summary">
+      <div class="bar"><i></i><i></i><i></i></div>
+<pre><span class="v">const</span> ranjitha = {
+  <span class="k">degree</span>: <span class="s">"BCA Computer Science"</span>,
+  <span class="k">college</span>: <span class="s">"Central Commerce
+    First Grade College"</span>,
+  <span class="k">city</span>: <span class="s">"Hassan, Karnataka"</span>,
+  <span class="k">learning</span>: [<span class="s">"Web"</span>, <span class="s">"Python"</span>, <span class="s">"SQL"</span>],
+  <span class="k">status</span>: <span class="s">"open to internships"</span>
+};</pre>
+    </div>
+  </div></div>
+
+  <section id="about"><div class="wrap">
+    <h2>About me</h2>
+    <div class="about">
+      <div>
+        <p>I'm Ranjitha, a Bachelor of Computer Applications student at Central Commerce First Grade College in Hassan. I enjoy turning ideas into working programs and websites, and I like understanding how things work underneath.</p>
+        <p>I'm looking for internships and projects where I can learn from a team, contribute, and grow into a software developer.</p>
+      </div>
+      <ul class="facts">
+        <li><b>Degree</b>BCA, Computer Science</li>
+        <li><b>College</b>Central Commerce First Grade College</li>
+        <li><b>Location</b>Hassan, Karnataka</li>
+      </ul>
+    </div>
+  </div></section>
+
+  <section id="education" class="alt"><div class="wrap">
+    <h2 style="--c:var(--teal)">Education</h2>
+    <div class="edu">
+      <div class="badge">BCA</div>
+      <div>
+        <h3>Bachelor of Computer Applications</h3>
+        <div class="t">Computer Science</div>
+        <div>Central Commerce First Grade College, Hassan, Karnataka</div>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="skills"><div class="wrap">
+    <h2 style="--c:var(--coral)">Skills</h2>
+    <div class="cols">
+      <div class="col"><h3>Programming</h3><ul class="chips"><li>C</li><li>Java</li><li>Python</li></ul></div>
+      <div class="col"><h3>Web</h3><ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></div>
+      <div class="col"><h3>CS basics</h3><ul class="chips"><li>SQL and DBMS</li><li>Data structures</li><li>Operating systems</li><li>Networking</li></ul></div>
+    </div>
+  </div></section>
+
+  <section id="projects" class="alt"><div class="wrap">
+    <h2 style="--c:var(--gold)">Projects</h2>
+    <div class="cols">
+      <article class="card"><div class="top">01</div><div class="in"><h3>Project one</h3><p>Describe what it does, who it helps, and what you built. Replace this text with your own project.</p><span class="tags">HTML · CSS · JavaScript</span></div></article>
+      <article class="card"><div class="top">02</div><div class="in"><h3>Project two</h3><p>Add a college mini project, such as a student record system or billing app, and link to its code.</p><span class="tags">Python · SQL</span></div></article>
+      <article class="card"><div class="top">03</div><div class="in"><h3>Project three</h3><p>Add a third project, or a certificate or workshop you completed.</p><span class="tags">Java</span></div></article>
+    </div>
+  </div></section>
+
+  <section id="contact"><div class="wrap">
+    <h2>Contact</h2>
+    <p>I'm open to internships, collaborations, and conversations about tech. Send a message and I'll reply.</p>
+    <div class="clist">
+      <a href="mailto:your.email@example.com"><b>Email</b>your.email@example.com</a>
+      <a href="https://www.linkedin.com/" rel="noopener"><b>LinkedIn</b>Add your profile link</a>
+      <a href="https://github.com/" rel="noopener"><b>GitHub</b>Add your username</a>
+    </div>
+  </div></section>
+</main>
+<footer><div class="wrap">© <span id="yr">2026</span> Ranjitha BG · Hassan, Karnataka</div></footer>
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+var r=document.documentElement;
+document.getElementById('theme').addEventListener('click',function(){
+  var d=r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+  r.setAttribute('data-theme',d?'light':'dark');
+});
+</script>
+</body>
+</html>
